@@ -27,7 +27,7 @@
  
 7. 同じウィンドウに、EdgeAddonNiconamaBouyomi.zipをドラッグアンドドロップする。<br>
 インストール済みの拡張機能の一覧の「他のソースから」に「ニコ生棒読みちゃん連携」が表示されていればインストール完了。
-![image03](https://github.com/user-attachments/assets/72653bed-0c75-4f7d-aa75-e38d324d2995)
+![image03](https://github.com/user-attachments/assets/ab11cde3-de37-4483-9a5f-e7a1426244e8)
 
 ### つかいかた
 1. 棒読みちゃんを起動する。<br>
