@@ -34,6 +34,7 @@ const textStartStopButton =
 // ボタン追加実行
 document.getElementById('akashic-gameview').insertAdjacentHTML('afterbegin', textStartStopButton);
 document.getElementById('btnStartStop').addEventListener("click", onStartStopClick, false);
+const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));//timeはミリ秒
 
 var lastCommentNumber = -1;
 
@@ -41,18 +42,22 @@ var lastCommentNumber = -1;
 const callback = async function(mutationsList, observer) {
     for (let mutation of mutationsList) {
         if (mutation.type === 'childList') {
-            for(idx in mutation.target.children){
-                node = mutation.target.children[idx];
-                const commentNumber = parseInt(node.querySelector('.comment-number').innerText);
-                const commentText = node.querySelector('.comment-text').innerText;
-                if(commentNumber > lastCommentNumber){
-                    lastCommentNumber = commentNumber;
-                    let param = new URLSearchParams();
-                    param.set('text', commentText);
-                    navigator.sendBeacon('http://localhost:50080/Talk', param);
-                    console.log('comment', commentNumber, commentText);
+            mutation.addedNodes.forEach(async node => {
+                try{
+                    const commentNumber = parseInt(node.querySelector('.comment-number').innerText);
+                    const commentText = node.querySelector('.comment-text').innerText;
+                    if(commentNumber > lastCommentNumber){
+                        lastCommentNumber = commentNumber;
+                        let param = new URLSearchParams();
+                        param.set('text', commentText);
+                        navigator.sendBeacon('http://localhost:50080/Talk', param);
+                        // console.log('comment', commentNumber, commentText);
+                        await sleep(50);    // 棒読みちゃんのHTTPサーバへの気遣い
+                    }
+                }catch(e){
+                    console.error("ERROR", e);
                 }
-            };
+            });
         }
     }
 };
