@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "ニコ生棒読みちゃん連携",
+    "version": "1.0",
+    "description": "ニコ生のコメントを棒読みちゃんのHTTP連携機能に送ります。",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "webNavigation",
+        "http://localhost/*"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://live.nicovideo.jp/watch/*"],
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
