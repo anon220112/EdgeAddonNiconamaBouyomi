@@ -14,8 +14,7 @@
 >   ニコ生のタブをアクティブにすれば、読み上げが復活します。
 
 ### インストール方法
-1. このページ右のReleasesをクリックし、EdgeAddonNiconamaBouyomi.zipをダウンロードする。<br>
-![image](https://github.com/user-attachments/assets/c70fcfec-58bc-42e1-bcfe-51a6effbace0)
+1. [EdgeAddonNiconamaBouyomi.zip](https://github.com/anon220112/EdgeAddonNiconamaBouyomi/releases/download/Release/EdgeAddonNiconamaBouyomi.zip)をダウンロードする。<br>
 
 2. Edgeの「拡張機能の管理」を開く。<br>
 ![image01](https://github.com/user-attachments/assets/1ac1952e-49a4-47da-bf46-9363ff8a45a8)
