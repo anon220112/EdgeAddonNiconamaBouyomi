@@ -14,17 +14,17 @@
 >   ニコ生のタブをアクティブにすれば、読み上げが復活します。
 
 ### インストール方法
-1. このページ右のReleasesをクリックし、EdgeAddonNiconamaBouyomi.zipをダウンロードする。
-![image00a](https://github.com/user-attachments/assets/0c241498-5de2-4f02-a388-5933c2370b1b)
+1. このページ右のReleasesをクリックし、EdgeAddonNiconamaBouyomi.zipをダウンロードする。<br>
+![image](https://github.com/user-attachments/assets/c70fcfec-58bc-42e1-bcfe-51a6effbace0)
 
-2. Edgeの「拡張機能の管理」を開く。
+2. Edgeの「拡張機能の管理」を開く。<br>
 ![image01](https://github.com/user-attachments/assets/1ac1952e-49a4-47da-bf46-9363ff8a45a8)
  
-5. 「開発者モード」をONにする。（画像はONになっている状態）
+5. 「開発者モード」をONにする。（画像はONになっている状態）<br>
 ![image02](https://github.com/user-attachments/assets/45103d25-9ac4-4e2c-8cb6-0d31c759ed41)
  
 7. 同じウィンドウに、EdgeAddonNiconamaBouyomi.zipをドラッグアンドドロップする。<br>
-インストール済みの拡張機能の一覧の「他のソースから」に「ニコ生棒読みちゃん連携」が表示されていればインストール完了。
+インストール済みの拡張機能の一覧の「他のソースから」に「ニコ生棒読みちゃん連携」が表示されていればインストール完了。<br>
 ![image03](https://github.com/user-attachments/assets/ab11cde3-de37-4483-9a5f-e7a1426244e8)
 
 ### つかいかた
@@ -32,6 +32,6 @@
 棒読みちゃんの設定画面を開き、画面左側のツリーで「アプリケーション連携」を選択し、画面右側で「ローカルHTTPサーバ機能を使う」をTrueに、ポート番号を50080にする。（デフォルトはそうなっているはず）<br>
 ![image05](https://github.com/user-attachments/assets/756342d0-2fef-45bd-85e5-007d22f148f8)
 
-3. ニコ生の放送ページを開き、映像右下の「棒読み連携開始」ボタンを押す。
+3. ニコ生の放送ページを開き、映像右下の「棒読み連携開始」ボタンを押す。<br>
 ![image04](https://github.com/user-attachments/assets/94b1e054-31c3-4c05-a651-5a9785d55f34)
 
