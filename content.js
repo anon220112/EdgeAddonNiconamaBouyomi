@@ -48,11 +48,13 @@ const callback = async function(mutationsList, observer) {
                     const commentText = node.querySelector('.comment-text').innerText;
                     if(commentNumber > lastCommentNumber){
                         lastCommentNumber = commentNumber;
-                        let param = new URLSearchParams();
-                        param.set('text', commentText);
-                        navigator.sendBeacon('http://localhost:50080/Talk', param);
-                        // console.log('comment', commentNumber, commentText);
-                        await sleep(50);    // 棒読みちゃんのHTTPサーバへの気遣い
+                        chrome.runtime.sendMessage({ action: 'bouyomi', data: commentText }, (response) => {
+                            if (response.data) {
+                                console.log('bouyomi OK:', commentNumber, commentText);
+                            } else if (response.error) {
+                                console.error('bouyomi NG:', commentNumber, commentText);
+                            }
+                        });
                     }
                 }catch(e){
                     console.error("ERROR", e);
