@@ -50,7 +50,7 @@ const callback = async function(mutationsList, observer) {
                         lastCommentNumber = commentNumber;
                         chrome.runtime.sendMessage({ action: 'bouyomi', data: commentText }, (response) => {
                             if (response.data) {
-                                console.log('bouyomi OK:', commentNumber, commentText);
+                                // console.log('bouyomi OK:', commentNumber, commentText);
                             } else if (response.error) {
                                 console.error('bouyomi NG:', commentNumber, commentText);
                             }
