@@ -55,6 +55,7 @@ const callback = async function(mutationsList, observer) {
                                 console.error('bouyomi NG:', commentNumber, commentText);
                             }
                         });
+                        await sleep(10);
                     }
                 }catch(e){
                     console.error("ERROR", e);
