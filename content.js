@@ -44,10 +44,10 @@ const callback = async function(mutationsList, observer) {
         if (mutation.type === 'childList') {
             mutation.addedNodes.forEach(async node => {
                 try{
-                    const commentNumber = parseInt(node.querySelector('.comment-number').innerText);
+                    const commentNumber = node.querySelector('.comment-number').innerText;
                     const commentText = node.querySelector('.comment-text').innerText;
-                    if(commentNumber > lastCommentNumber){
-                        lastCommentNumber = commentNumber;
+                    if(commentNumber == '' ||　parseInt(commentNumber) > lastCommentNumber){
+                        lastCommentNumber = parseInt(commentNumber);
                         chrome.runtime.sendMessage({ action: 'bouyomi', data: commentText }, (response) => {
                             if (response.data) {
                                 // console.log('bouyomi OK:', commentNumber, commentText);
