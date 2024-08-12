@@ -47,7 +47,9 @@ const callback = async function(mutationsList, observer) {
                     const commentNumber = node.querySelector('.comment-number').innerText;
                     const commentText = node.querySelector('.comment-text').innerText;
                     if(commentNumber == '' ||　parseInt(commentNumber) > lastCommentNumber){
-                        lastCommentNumber = parseInt(commentNumber);
+                        if(commentNumber != ''){
+                            lastCommentNumber = parseInt(commentNumber);
+                        }
                         chrome.runtime.sendMessage({ action: 'bouyomi', data: commentText }, (response) => {
                             if (response.data) {
                                 // console.log('bouyomi OK:', commentNumber, commentText);
