@@ -25,14 +25,14 @@ function onStartStopClick() {
 
 // 連携開始/停止ボタン
 const textStartStopButton = 
-    `<div style="position relative; width:100%; height:100%;display:flex; justify-content: flex-end;align-items: flex-end;">
-        <button id="btnStartStop" style="position: relative; width: 10rem; height: 3rem; margin-right: 0.5rem; margin-bottom: 0.5rem; 
+    `<div style="position:absolute;left:0;top:0; width:100%; height:100%;pointer-events:none;display:flex; justify-content: flex-end;align-items: flex-end;background-color: transparent;">
+        <button id="btnStartStop" style="position: relative;pointer-events:auto; width: 10rem; height: 3rem; margin-right: 0.5rem; margin-bottom: 0.5rem; 
         background-color: blue; color: white; font-size: 1.2rem;">棒読み連携開始</button>
     </div>
     `;
 
 // ボタン追加実行
-document.getElementById('akashic-gameview').insertAdjacentHTML('afterbegin', textStartStopButton);
+document.querySelector('[data-view-mode="watch"]').insertAdjacentHTML('beforeend', textStartStopButton);
 document.getElementById('btnStartStop').addEventListener("click", onStartStopClick, false);
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));//timeはミリ秒
 
